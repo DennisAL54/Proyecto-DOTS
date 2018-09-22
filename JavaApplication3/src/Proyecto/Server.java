@@ -14,7 +14,16 @@ import java.util.List;
  */
 public class Server {
     private boolean turno;
-    
+
+    public boolean getTurno() {
+        return turno;
+    }
+    public void AsigTurno(){
+        if (getTurno() == false) {
+            
+        }
+    }
+
     public void mainConversor(){
         List<List> Botones;
         List<Integer> Fila1;
