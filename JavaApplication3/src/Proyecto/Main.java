@@ -13,5 +13,8 @@ public class Main {
     public static void main(String [] args){
         Server su = new Server();
         su.mainConversor();
+        
+        socket c = new socket();
+        c.iniciar();
     }
 }
