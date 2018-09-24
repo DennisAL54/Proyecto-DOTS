@@ -4,7 +4,7 @@
  * and open the template in the editor.
  */
 package Proyecto;
-
+import com.google.gson.Gson;
 import java.util.ArrayList;
 import java.util.List;
 
@@ -14,6 +14,7 @@ import java.util.List;
  */
 public class Server {
     private boolean turno;
+    private String dataentrante;
 
     public boolean getTurno() {
         return turno;
@@ -24,7 +25,7 @@ public class Server {
         }
     }
 
-    public void mainConversor(){
+    public void mainSerializador(){
         List<List> Botones;
         List<Integer> Fila1;
         List<Integer> Fila2;
@@ -45,6 +46,13 @@ public class Server {
         Botones.add(Fila1);
         Botones.add(Fila2);
         Botones.add(Fila3);
-        System.out.println(Botones);
+        Gson gson = new Gson();
+        String jsonData = gson.toJson(Botones);
+    }
+    public void mainDeseralizador(){
+        dataentrante = "{'boton1': 'Alpha'}";
+        Gson gsonI = new Gson();
+        
+        gsonI.fromJson(dataentrante, Server.class);
     }
 }
