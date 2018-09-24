@@ -4,37 +4,41 @@
  * and open the template in the editor.
  */
 package Proyecto;
+
 import java.net.*;
 import java.io.*;
+import java.net.ServerSocket;
+import java.net.Socket;
+import java.io.IOException;
 
 /**
  *
  * @author roy
  */
-public class socket {
+public class socket implements Runnable{
     
-    ServerSocket server;
+    
+    //Variables
+    ServerSocket server = null;
     Socket socket;
     int puerto = 9000;
-    DataOutputStream salida;
-    BufferedReader entrada;
+    Thread running = null;
+    boolean parado = false;
     
-    public void iniciar()
-    {
-        try{
-            server = new ServerSocket(puerto);
-            socket = new Socket();
-            socket = server.accept();
-            
-            entrada = new BufferedReader(new InputStreamReader(socket.getInputStream()));
-            String mensaje = entrada.readLine();
-            System.out.println(mensaje);
-            salida = new DataOutputStream(socket.getOutputStream());
-            salida.writeUTF("Servidor cerrado");
-            socket.close();
-        }catch(Exception e){};
-           
+    //Establece el puerto
+   public socket (int puerto){
+        this.puerto = puerto;
     }
-        
+       
+   public void run(){
+       synchronized(this){
+       this.running = Thread.currentThread();
+   }
+    
+       
+       
+   }   
+
+    
     
 }
