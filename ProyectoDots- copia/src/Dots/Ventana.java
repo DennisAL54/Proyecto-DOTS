@@ -6,8 +6,16 @@ import java.awt.Color;
 import java.awt.Font;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
+import java.io.IOException;
 import javax.swing.JButton;
 import javax.swing.JComponent;
+import java.net.Socket;
+import java.net.ServerSocket;
+import java.io.ObjectInputStream;
+import java.io.ObjectOutputStream;
+import java.net.UnknownHostException;
+import java.util.logging.Level;
+import java.util.logging.Logger;
 
 /**
  * 
@@ -26,7 +34,14 @@ public class Ventana extends JComponent{
     private JButton boton1,boton2,boton3,boton4,boton5,boton6,boton7,boton8,boton9,boton10,boton11,boton12,boton13,
              boton14,boton15,boton16,boton17,boton18,boton19,boton20,boton21,boton22,boton23,boton24;
     
-    
+    public void Socket(){
+        try {
+            Socket Cliente = new Socket("localhost", 4500);
+            ObjectOutputStream mensaje = new ObjectOutputStream(Cliente.getOutputStream());
+        } catch (IOException ex) {
+            Logger.getLogger(Ventana.class.getName()).log(Level.SEVERE, null, ex);
+        }
+    }
     /**
      * Constructor de las clase ventana donde se crea la malla
      */

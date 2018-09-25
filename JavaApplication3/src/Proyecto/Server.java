@@ -5,8 +5,16 @@
  */
 package Proyecto;
 import com.google.gson.Gson;
+import java.io.IOException;
 import java.util.ArrayList;
 import java.util.List;
+import java.net.Socket;
+import java.net.ServerSocket;
+import java.io.ObjectInputStream;
+import java.io.ObjectOutputStream;
+import java.util.logging.Level;
+import java.util.logging.Logger;
+
 
 /**
  *
@@ -48,6 +56,15 @@ public class Server {
         Botones.add(Fila3);
         Gson gson = new Gson();
         String jsonData = gson.toJson(Botones);
+    }
+    public void Socket(){
+        try {
+            ServerSocket servidor = new ServerSocket(4500);
+            Socket NuevoCliente = servidor.accept();
+        } catch (IOException ex) {
+            Logger.getLogger(Server.class.getName()).log(Level.SEVERE, null, ex);
+        }
+        
     }
     public void mainDeseralizador(){
         dataentrante = "{'boton1': 'Alpha'}";
