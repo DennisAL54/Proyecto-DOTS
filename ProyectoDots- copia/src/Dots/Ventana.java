@@ -27,8 +27,8 @@ public class Ventana extends JComponent{
     // Posición de los puntos dentro de la lista de lista
     private final int PuntoColum, PuntoFila, Punto_inicioX, Punto_inicioY, Punto_Relleno;
     private Font font; // Fuente de la letra
-    private String msg; // mensaje en pantalla
-    static int Marcador; // Marcador del jugador
+    private String msg1, msg2; // mensaje en pantalla
+    static int Marcador1 , Marcador2; // Marcador del jugador
     private int fin; // Cantidad de putos de la malla
     // Botones que hacen el papel de conectores entre líneas
     private JButton boton1,boton2,boton3,boton4,boton5,boton6,boton7,boton8,boton9,boton10,boton11,boton12,boton13,
@@ -313,11 +313,19 @@ public class Ventana extends JComponent{
                 boton24.setEnabled(false);
                 boton24.setBackground(Color.GREEN);
                 comprobarCuadros();}});
-         
-        Marcador = 0;
+        
+        marcador(Marcador1, Marcador2);
+    }
+    
+    public void marcador(int Marcador1, int Marcador2){
+        Marcador1 = 0;
         font = new Font("Ventana", Font.PLAIN, 20);
-        msg = "Marcador: " + Marcador;
- 
+        msg1 = "Jugador 1: " + Marcador1;
+        
+        Marcador2 = 0;
+        font = new Font("Ventana", Font.PLAIN, 20);
+        msg2 = " Jugador 2: " + Marcador2;
+        repaint();
     }
     /**
      * Método que compraba si se cierra un cuadrado
@@ -360,7 +368,8 @@ public class Ventana extends JComponent{
         // Dibujar el texto en la ventana
         g2d.setColor(Color.black); // Color del marcador
         g2d.setFont(font);
-        g2d.drawString(msg, 5, 19);
+        g2d.drawString(msg1, 5, 19);
+        g2d.drawString(msg2, 190, 19);
         g.dispose();
         
         // Cuadrados
