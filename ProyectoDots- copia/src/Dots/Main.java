@@ -9,6 +9,9 @@ import javax.swing.JFrame;
  */
 public class Main extends JFrame {
 
+    /**
+     *
+     */
     public Main(){
         add(new Ventana()); //Añade la ventana que tiene la malla 
         setTitle("Dots"); // Título de la ventana
@@ -20,6 +23,11 @@ public class Main extends JFrame {
         setLocationRelativeTo(null); // localización de la ventana
         setVisible(true); // muestra la ventana   
     }
+
+    /**
+     *
+     * @param args
+     */
     public static void main(String[] args) {
         new Main();}
 }

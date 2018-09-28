@@ -34,11 +34,14 @@ public class Ventana extends JComponent{
     private JButton boton1,boton2,boton3,boton4,boton5,boton6,boton7,boton8,boton9,boton10,boton11,boton12,boton13,
              boton14,boton15,boton16,boton17,boton18,boton19,boton20,boton21,boton22,boton23,boton24;
     
-    public void Socket(){
+    /**
+     *
+     */
+    public void Socket(){ // Creacion de Socket
         try {
-            Socket Cliente = new Socket("localhost", 4500);
-            ObjectOutputStream mensaje = new ObjectOutputStream(Cliente.getOutputStream());
-        } catch (IOException ex) {
+            Socket Cliente = new Socket("localhost", 4500); // Declaracion del socket cliente
+            ObjectOutputStream mensaje = new ObjectOutputStream(Cliente.getOutputStream()); // Envio de mensaje
+        } catch (IOException ex) {// Excepcion (Parecido al del server)
             Logger.getLogger(Ventana.class.getName()).log(Level.SEVERE, null, ex);
         }
     }

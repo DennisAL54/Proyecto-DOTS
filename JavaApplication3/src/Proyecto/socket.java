@@ -15,7 +15,7 @@ import java.io.IOException;
  *
  * @author roy
  */
-public class socket implements Runnable{
+public class socket implements Runnable{//Alternativa de socket
     
     
     //Variables
@@ -26,6 +26,11 @@ public class socket implements Runnable{
     boolean parado = false;
     
     //Establece el puerto
+
+    /**
+     *
+     * @param puerto
+     */
    public socket (int puerto){
         this.puerto = puerto;
     }

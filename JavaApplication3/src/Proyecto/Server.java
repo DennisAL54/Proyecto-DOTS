@@ -4,15 +4,15 @@
  * and open the template in the editor.
  */
 package Proyecto;
-import com.google.gson.Gson;
-import java.io.IOException;
-import java.util.ArrayList;
-import java.util.List;
-import java.net.Socket;
-import java.net.ServerSocket;
-import java.io.ObjectInputStream;
+import com.google.gson.Gson; // Import de GSON
+import java.io.IOException; // Import para las IO exception
+import java.util.ArrayList; // Import para los Arrays
+import java.util.List; // Import para las listas
+import java.net.Socket; // Import para los Sockets
+import java.net.ServerSocket; //Import para el server
+import java.io.ObjectInputStream; //Import para los input y output streams
 import java.io.ObjectOutputStream;
-import java.util.logging.Level;
+import java.util.logging.Level; // Import para los loggin
 import java.util.logging.Logger;
 
 
@@ -20,29 +20,36 @@ import java.util.logging.Logger;
  *
  * @author aleji
  */
-public class Server {
-    private boolean turno;
-    private String dataentrante;
+public class Server { // Class para el server
+    private boolean turno; // Manejo del turno
+    private String dataentrante; // Datos entrantes
 
-    public boolean getTurno() {
+    /**
+     *
+     * @return
+     */
+    public boolean getTurno() { // Getters
         return turno;
     }
-    public void AsigTurno(){
+    public void AsigTurno(){ // Boolean para el turno
         if (getTurno() == false) {
             
         }
     }
 
-    public void mainSerializador(){
-        List<List> Botones;
-        List<Integer> Fila1;
+    /**
+     *
+     */
+    public void mainSerializador(){ // Serializador principal
+        List<List> Botones; // Variable de tipo lista
+        List<Integer> Fila1;//Variables para las filas
         List<Integer> Fila2;
         List<Integer> Fila3;
-        Botones = new ArrayList<>();
-        Fila1 = new ArrayList<>();
+        Botones = new ArrayList<>(); // Declaracion de Lista de listas
+        Fila1 = new ArrayList<>();// Declaracion de las filas
         Fila2 = new ArrayList<>();
         Fila3 = new ArrayList<>();
-        Fila1.add(1);
+        Fila1.add(1); //Adicion de botones a las listas (filas)
         Fila1.add(2);
         Fila1.add(3);
         Fila2.add(4);
@@ -51,22 +58,30 @@ public class Server {
         Fila3.add(7);
         Fila3.add(8);
         Fila3.add(9);
-        Botones.add(Fila1);
+        Botones.add(Fila1);// Adicion de las filas a la lista de lista
         Botones.add(Fila2);
         Botones.add(Fila3);
         Gson gson = new Gson();
-        String jsonData = gson.toJson(Botones);
+        String jsonData = gson.toJson(Botones);// Se serializa el boton
     }
-    public void Socket(){
+
+    /**
+     *
+     */
+    public void Socket(){ // Metodo del socket
         try {
-            ServerSocket servidor = new ServerSocket(4500);
-            Socket NuevoCliente = servidor.accept();
-        } catch (IOException ex) {
+            ServerSocket servidor = new ServerSocket(4500);// Declaracion de nuevo Socket server
+            Socket NuevoCliente = servidor.accept();// Declaracion de un cliente
+        } catch (IOException ex) { // Try y Catch en caso de excepciones (Server no encontrado)
             Logger.getLogger(Server.class.getName()).log(Level.SEVERE, null, ex);
         }
         
     }
-    public void mainDeseralizador(){
+
+    /**
+     *
+     */
+    public void mainDeseralizador(){ //Deserializador de Json
         dataentrante = "{'boton1': 'Alpha'}";
         Gson gsonI = new Gson();
         

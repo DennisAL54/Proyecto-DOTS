@@ -10,6 +10,11 @@ package Proyecto;
  * @author aleji
  */
 public class Main {
+
+    /**
+     *
+     * @param args
+     */
     public static void main(String [] args){
         Server su = new Server();
         su.mainSerializador();
