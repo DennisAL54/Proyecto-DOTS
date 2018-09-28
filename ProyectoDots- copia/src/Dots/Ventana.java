@@ -319,16 +319,20 @@ public class Ventana extends JComponent{
         
         marcador(Marcador1, Marcador2);
     }
-    
+    /**
+     * Lleva el control del marcador del jugador1 y jugador2
+     * @param Marcador1: Puntuación del jugador1
+     * @param Marcador2: Puntuación del jugador2
+     */
     public void marcador(int Marcador1, int Marcador2){
-        Marcador1 = 0;
-        font = new Font("Ventana", Font.PLAIN, 20);
-        msg1 = "Jugador 1: " + Marcador1;
+        Marcador1 = 0; // Valor inicial del Marcador1
+        font = new Font("Ventana", Font.PLAIN, 20); // Características de la letra al mostrarse en pantalla 
+        msg1 = "Jugador 1: " + Marcador1; // Mensaje que se va a mostrar en pantalla 
         
         Marcador2 = 0;
         font = new Font("Ventana", Font.PLAIN, 20);
         msg2 = " Jugador 2: " + Marcador2;
-        repaint();
+        repaint(); // Cambia el marcador al hacer un cambio de puntuación
     }
     /**
      * Método que compraba si se cierra un cuadrado
@@ -371,12 +375,8 @@ public class Ventana extends JComponent{
         // Dibujar el texto en la ventana
         g2d.setColor(Color.black); // Color del marcador
         g2d.setFont(font);
-        g2d.drawString(msg1, 5, 19);
-        g2d.drawString(msg2, 190, 19);
-        g.dispose();
-        
-        // Cuadrados
-        
-        
+        g2d.drawString(msg1, 5, 19); // Posición del Marcador1 en pantalla
+        g2d.drawString(msg2, 190, 19); // Posición del Marcador2 en pantalla
+        g.dispose(); 
     }   
 }

@@ -40,42 +40,42 @@ public class Punto {
     }
     /**
      * Determinar valor de x
-     * @param x 
+     * @param x: Valor entero para x
      */
     public void setX(int x){
         this.x = x;
     }
     /**
      * Determinar valor de y
-     * @param y 
+     * @param y: Valor entero para y
      */
     public void setY(int y){
         this.y = y;
     }
     /**
      * Imagen del punto
-     * @return 
+     * @return Imagen seleccionada
      */
     public Image getImage(){
         return image;
     }
     /**
      * Permite ver el punto
-     * @param visible 
+     * @param visible: valor booleano para visible
      */
     public void setVisible(boolean visible){
         this.visible = visible;
     }
     /**
      * Permite que la imagen sea visible
-     * @return 
+     * @return valor que contiene visible
      */
     public boolean isVisible(){
         return visible;
     } 
     /**
      * Dimisiones del punto
-     * @return 
+     * @return Nueva sección con las dimensiones dadas
      */
     public Rectangle getBounds(){
         return new Rectangle(x, y, image.getWidth(null), image.getHeight(null));
