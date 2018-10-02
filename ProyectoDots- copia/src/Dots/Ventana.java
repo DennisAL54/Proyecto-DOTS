@@ -16,6 +16,8 @@ import java.io.ObjectOutputStream;
 import java.net.UnknownHostException;
 import java.util.logging.Level;
 import java.util.logging.Logger;
+import java.util.ArrayList;
+import java.util.List;
 
 /**
  * 
@@ -34,13 +36,188 @@ public class Ventana extends JComponent{
     private JButton boton1,boton2,boton3,boton4,boton5,boton6,boton7,boton8,boton9,boton10,boton11,boton12,boton13,
              boton14,boton15,boton16,boton17,boton18,boton19,boton20,boton21,boton22,boton23,boton24;
     
+    
+    private void ListaEnvio(){
+        List<List> Datos;
+        List<Integer> Jugada;
+        Jugada = new ArrayList();
+        boolean boton1yajugado;
+        boolean boton2yajugado;
+        boolean boton3yajugado;
+        boolean boton4yajugado;
+        boolean boton5yajugado;
+        boolean boton6yajugado;
+        boolean boton7yajugado;
+        boolean boton8yajugado;
+        boolean boton9yajugado;
+        boolean boton10yajugado;
+        boolean boton11yajugado;
+        boolean boton12yajugado;
+        boolean boton13yajugado;
+        boolean boton14yajugado;
+        boolean boton15yajugado;
+        boolean boton16yajugado;
+        boolean boton17yajugado;
+        boolean boton18yajugado;
+        boolean boton19yajugado;
+        boolean boton20yajugado;
+        boolean boton21yajugado;
+        boolean boton22yajugado;
+        boolean boton23yajugado;
+        boolean boton24yajugado;
+        boton1yajugado = false;
+        boton2yajugado = false;
+        boton3yajugado = false;
+        boton4yajugado = false;
+        boton5yajugado = false;
+        boton6yajugado = false;
+        boton7yajugado = false;
+        boton8yajugado = false;
+        boton9yajugado = false;
+        boton10yajugado = false;
+        boton11yajugado = false;
+        boton12yajugado = false;
+        boton13yajugado = false;
+        boton14yajugado = false;
+        boton15yajugado = false;
+        boton16yajugado = false;
+        boton17yajugado = false;
+        boton18yajugado = false;
+        boton19yajugado = false;
+        boton20yajugado = false;
+        boton21yajugado = false;
+        boton22yajugado = false;
+        boton23yajugado = false;
+        boton24yajugado = false;
+        if (boton1.isEnabled() == true & boton1yajugado == false){
+            boton1yajugado = true;
+            Jugada.add(1);
+            
+        }
+        if (boton2.isEnabled() == true & boton2yajugado == false){
+            boton2yajugado = true;
+            Jugada.add(2);
+            
+        }
+        if (boton3.isEnabled() == true & boton3yajugado == false){
+            boton3yajugado = true;
+            Jugada.add(3);
+            
+        }
+        if (boton4.isEnabled() == true & boton4yajugado == false){
+            boton4yajugado = true;
+            Jugada.add(4);
+            
+        }
+        if (boton5.isEnabled() == true & boton5yajugado == false){
+            boton5yajugado = true;
+            Jugada.add(5);
+            
+        }
+        if (boton6.isEnabled() == true & boton6yajugado == false){
+            boton6yajugado = true;
+            Jugada.add(6);
+            
+        }
+        if (boton7.isEnabled() == true & boton7yajugado == false){
+            boton7yajugado = true;
+            Jugada.add(7);
+            
+        }
+        if (boton8.isEnabled() == true & boton8yajugado == false){
+            boton8yajugado = true;
+            Jugada.add(8);
+            
+        }
+        if (boton9.isEnabled() == true & boton9yajugado == false){
+            boton9yajugado = true;
+            Jugada.add(9);
+            
+        }
+        if (boton10.isEnabled() == true & boton10yajugado == false){
+            boton10yajugado = true;
+            Jugada.add(10);
+            
+        }
+        if (boton11.isEnabled() == true & boton11yajugado == false){
+            boton11yajugado = true;
+            Jugada.add(11);
+            
+        }
+        if (boton12.isEnabled() == true & boton12yajugado == false){
+            boton12yajugado = true;
+            Jugada.add(12);
+            
+        }
+        if (boton13.isEnabled() == true & boton13yajugado == false){
+            boton13yajugado = true;
+            Jugada.add(13);
+            
+        }
+        if (boton14.isEnabled() == true & boton14yajugado == false){
+            boton14yajugado = true;
+            Jugada.add(14);
+            
+        }
+        if (boton15.isEnabled() == true & boton15yajugado == false){
+            boton15yajugado = true;
+            Jugada.add(15);
+            
+        }
+        if (boton16.isEnabled() == true & boton16yajugado == false){
+            boton16yajugado = true;
+            Jugada.add(16);
+            
+        }
+        if (boton17.isEnabled() == true & boton17yajugado == false){
+            boton17yajugado = true;
+            Jugada.add(17);
+            
+        }
+        if (boton18.isEnabled() == true & boton18yajugado == false){
+            boton18yajugado = true;
+            Jugada.add(18);
+            
+        }
+        if (boton19.isEnabled() == true & boton19yajugado == false){
+            boton19yajugado = true;
+            Jugada.add(19);
+            
+        }
+        if (boton20.isEnabled() == true & boton20yajugado == false){
+            boton20yajugado = true;
+            Jugada.add(20);
+            
+        }
+        if (boton21.isEnabled() == true & boton21yajugado == false){
+            boton21yajugado = true;
+            Jugada.add(21);
+            
+        }
+        if (boton22.isEnabled() == true & boton22yajugado == false){
+            boton22yajugado = true;
+            Jugada.add(22);
+            
+        }
+        if (boton23.isEnabled() == true & boton23yajugado == false){
+            boton23yajugado = true;
+            Jugada.add(23);
+            
+        }
+        if (boton24.isEnabled() == true & boton24yajugado == false){
+            boton24yajugado = true;
+            Jugada.add(24);
+            
+        }
+        }
     /**
      *
      */
     public void Socket(){ // Creacion de Socket
         try {
             Socket Cliente = new Socket("localhost", 4500); // Declaracion del socket cliente
-            ObjectOutputStream mensaje = new ObjectOutputStream(Cliente.getOutputStream()); // Envio de mensaje
+            ObjectOutputStream mensaje = new ObjectOutputStream(Cliente.getOutputStream());// Envio de mensaje
+            
         } catch (IOException ex) {// Excepcion (Parecido al del server)
             Logger.getLogger(Ventana.class.getName()).log(Level.SEVERE, null, ex);
         }

@@ -4,6 +4,7 @@
  * and open the template in the editor.
  */
 package Proyecto;
+import java.net.*;
 import com.google.gson.Gson; // Import de GSON
 import java.io.IOException; // Import para las IO exception
 import java.util.ArrayList; // Import para los Arrays
@@ -12,6 +13,7 @@ import java.net.Socket; // Import para los Sockets
 import java.net.ServerSocket; //Import para el server
 import java.io.ObjectInputStream; //Import para los input y output streams
 import java.io.ObjectOutputStream;
+import static java.util.Collections.list;
 import java.util.logging.Level; // Import para los loggin
 import java.util.logging.Logger;
 
@@ -23,6 +25,7 @@ import java.util.logging.Logger;
 public class Server { // Class para el server
     private boolean turno; // Manejo del turno
     private String dataentrante; // Datos entrantes
+    private List<List> Jugadas;
 
     /**
      *
