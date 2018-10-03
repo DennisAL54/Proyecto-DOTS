@@ -1,5 +1,6 @@
 package Dots;
 
+import com.google.gson.Gson;
 import java.awt.Graphics;
 import java.awt.Graphics2D;
 import java.awt.Color;
@@ -35,10 +36,11 @@ public class Ventana extends JComponent{
     // Botones que hacen el papel de conectores entre líneas
     private JButton boton1,boton2,boton3,boton4,boton5,boton6,boton7,boton8,boton9,boton10,boton11,boton12,boton13,
              boton14,boton15,boton16,boton17,boton18,boton19,boton20,boton21,boton22,boton23,boton24;
+    private List Datos;
     
-    
-    private void ListaEnvio(){
-        List<List> Datos;
+    public void ListaEnvio(){
+        List<Boolean> Turno;
+        Turno = new ArrayList();
         List<Integer> Jugada;
         Jugada = new ArrayList();
         boolean boton1yajugado;
@@ -92,124 +94,127 @@ public class Ventana extends JComponent{
         if (boton1.isEnabled() == true & boton1yajugado == false){
             boton1yajugado = true;
             Jugada.add(1);
+            Turno.add(true);
             
         }
         if (boton2.isEnabled() == true & boton2yajugado == false){
             boton2yajugado = true;
             Jugada.add(2);
-            
+            Turno.add(true);
         }
         if (boton3.isEnabled() == true & boton3yajugado == false){
             boton3yajugado = true;
             Jugada.add(3);
-            
+            Turno.add(true);
         }
         if (boton4.isEnabled() == true & boton4yajugado == false){
             boton4yajugado = true;
             Jugada.add(4);
-            
+            Turno.add(true);
         }
         if (boton5.isEnabled() == true & boton5yajugado == false){
             boton5yajugado = true;
             Jugada.add(5);
-            
+            Turno.add(true);
         }
         if (boton6.isEnabled() == true & boton6yajugado == false){
             boton6yajugado = true;
             Jugada.add(6);
-            
+            Turno.add(true);
         }
         if (boton7.isEnabled() == true & boton7yajugado == false){
             boton7yajugado = true;
             Jugada.add(7);
-            
+            Turno.add(true);
         }
         if (boton8.isEnabled() == true & boton8yajugado == false){
             boton8yajugado = true;
             Jugada.add(8);
-            
+            Turno.add(true);
         }
         if (boton9.isEnabled() == true & boton9yajugado == false){
             boton9yajugado = true;
             Jugada.add(9);
-            
+            Turno.add(true);
         }
         if (boton10.isEnabled() == true & boton10yajugado == false){
             boton10yajugado = true;
             Jugada.add(10);
-            
+            Turno.add(true);
         }
         if (boton11.isEnabled() == true & boton11yajugado == false){
             boton11yajugado = true;
             Jugada.add(11);
-            
+            Turno.add(true);
         }
         if (boton12.isEnabled() == true & boton12yajugado == false){
             boton12yajugado = true;
             Jugada.add(12);
-            
+            Turno.add(true);
         }
         if (boton13.isEnabled() == true & boton13yajugado == false){
             boton13yajugado = true;
             Jugada.add(13);
-            
+            Turno.add(true);
         }
         if (boton14.isEnabled() == true & boton14yajugado == false){
             boton14yajugado = true;
             Jugada.add(14);
-            
+            Turno.add(true);
         }
         if (boton15.isEnabled() == true & boton15yajugado == false){
             boton15yajugado = true;
             Jugada.add(15);
-            
+            Turno.add(true);
         }
         if (boton16.isEnabled() == true & boton16yajugado == false){
             boton16yajugado = true;
             Jugada.add(16);
-            
+            Turno.add(true);
         }
         if (boton17.isEnabled() == true & boton17yajugado == false){
             boton17yajugado = true;
             Jugada.add(17);
-            
+            Turno.add(true);
         }
         if (boton18.isEnabled() == true & boton18yajugado == false){
             boton18yajugado = true;
             Jugada.add(18);
-            
+            Turno.add(true);
         }
         if (boton19.isEnabled() == true & boton19yajugado == false){
             boton19yajugado = true;
             Jugada.add(19);
-            
+            Turno.add(true);
         }
         if (boton20.isEnabled() == true & boton20yajugado == false){
             boton20yajugado = true;
             Jugada.add(20);
-            
+            Turno.add(true);
         }
         if (boton21.isEnabled() == true & boton21yajugado == false){
             boton21yajugado = true;
             Jugada.add(21);
-            
+            Turno.add(true);
         }
         if (boton22.isEnabled() == true & boton22yajugado == false){
             boton22yajugado = true;
             Jugada.add(22);
-            
+            Turno.add(true);
         }
         if (boton23.isEnabled() == true & boton23yajugado == false){
             boton23yajugado = true;
             Jugada.add(23);
-            
+            Turno.add(true);
         }
         if (boton24.isEnabled() == true & boton24yajugado == false){
             boton24yajugado = true;
             Jugada.add(24);
-            
+            Turno.add(true);
         }
-        }
+    Datos.add(Jugada);
+    Datos.add(Turno);
+    }
     /**
      *
      */
@@ -217,7 +222,9 @@ public class Ventana extends JComponent{
         try {
             Socket Cliente = new Socket("localhost", 4500); // Declaracion del socket cliente
             ObjectOutputStream mensaje = new ObjectOutputStream(Cliente.getOutputStream());// Envio de mensaje
-            
+            Gson gsonBot = new Gson();
+            String jsonData = gsonBot.toJson(Datos);
+            mensaje.writeBytes(jsonData);
         } catch (IOException ex) {// Excepcion (Parecido al del server)
             Logger.getLogger(Ventana.class.getName()).log(Level.SEVERE, null, ex);
         }
