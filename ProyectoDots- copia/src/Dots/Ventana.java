@@ -38,12 +38,12 @@ public class Ventana extends JComponent{
              boton14,boton15,boton16,boton17,boton18,boton19,boton20,boton21,boton22,boton23,boton24;
     private List Datos;
     
-    public void ListaEnvio(){
+    public void ListaEnvio(){ // Controlador de entradas (Se encarga de comunicar al servidor sobre los movimientos realizados)
         List<Boolean> Turno;
-        Turno = new ArrayList();
+        Turno = new ArrayList(); //Variable que almacena el dato turno turno
         List<Integer> Jugada;
-        Jugada = new ArrayList();
-        boolean boton1yajugado;
+        Jugada = new ArrayList();//Variable que almacena el dato Jugada
+        boolean boton1yajugado; // Variables booleanas encargadas de revisar si un boton ya se jugo
         boolean boton2yajugado;
         boolean boton3yajugado;
         boolean boton4yajugado;
@@ -91,7 +91,7 @@ public class Ventana extends JComponent{
         boton22yajugado = false;
         boton23yajugado = false;
         boton24yajugado = false;
-        if (boton1.isEnabled() == true & boton1yajugado == false){
+        if (boton1.isEnabled() == true & boton1yajugado == false){ //Condicionales a la espera de un movimiento
             boton1yajugado = true;
             Jugada.add(1);
             Turno.add(true);
@@ -212,7 +212,7 @@ public class Ventana extends JComponent{
             Jugada.add(24);
             Turno.add(true);
         }
-    Datos.add(Jugada);
+    Datos.add(Jugada); // Se Añaden ambas variables de tipo lista a una lista mayor.
     Datos.add(Turno);
     }
     /**
@@ -222,9 +222,10 @@ public class Ventana extends JComponent{
         try {
             Socket Cliente = new Socket("localhost", 4500); // Declaracion del socket cliente
             ObjectOutputStream mensaje = new ObjectOutputStream(Cliente.getOutputStream());// Envio de mensaje
-            Gson gsonBot = new Gson();
-            String jsonData = gsonBot.toJson(Datos);
-            mensaje.writeBytes(jsonData);
+            Gson gsonBot = new Gson(); // declaracion de variable Conversora a json
+            String jsonData = gsonBot.toJson(Datos);// Conversion a Json
+            mensaje.writeBytes(jsonData); // Envio del mensaje en formato json
+            
         } catch (IOException ex) {// Excepcion (Parecido al del server)
             Logger.getLogger(Ventana.class.getName()).log(Level.SEVERE, null, ex);
         }
