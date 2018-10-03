@@ -75,6 +75,12 @@ public class Server { // Class para el server
         try {
             ServerSocket servidor = new ServerSocket(4500);// Declaracion de nuevo Socket server
             Socket NuevoCliente = servidor.accept();// Declaracion de un cliente
+            ObjectInputStream entrada = new ObjectInputStream(NuevoCliente.getInputStream());
+            try {
+                String mensaje = (String)entrada.readObject();
+            } catch (ClassNotFoundException ex) {
+                Logger.getLogger(Server.class.getName()).log(Level.SEVERE, null, ex);
+            }
         } catch (IOException ex) { // Try y Catch en caso de excepciones (Server no encontrado)
             Logger.getLogger(Server.class.getName()).log(Level.SEVERE, null, ex);
         }
