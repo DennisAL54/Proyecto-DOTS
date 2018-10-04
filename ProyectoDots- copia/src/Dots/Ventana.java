@@ -36,6 +36,11 @@ public class Ventana extends JComponent{
     // Botones que hacen el papel de conectores entre líneas
     private JButton boton1,boton2,boton3,boton4,boton5,boton6,boton7,boton8,boton9,boton10,boton11,boton12,boton13,
              boton14,boton15,boton16,boton17,boton18,boton19,boton20,boton21,boton22,boton23,boton24;
+<<<<<<< HEAD
+=======
+    private List Datos;
+    public boolean drawB1, drawB2, drawB3, drawB4, drawB5, drawB6, drawB7, drawB8, drawB9 = false;
+>>>>>>> master
     
     public void ListaEnvio(){ // Controlador de entradas (Se encarga de comunicar al servidor sobre los movimientos realizados)
         List<List> Datos;
@@ -247,9 +252,7 @@ public class Ventana extends JComponent{
         setDoubleBuffered(true);
         setBackground(Color.white);
         setFocusable(true);
-
         
-    
         // malla de puntos 
         PuntoColum = 4; // Cantidad de columnas de la malla
         PuntoFila = 4; // Cantidad de filas de la malla
@@ -266,7 +269,6 @@ public class Ventana extends JComponent{
                 puntos[i][j].setY(Punto_inicioY + j*puntos[i][j].getImage().getHeight(null) + j*Punto_Relleno);
             }
              
-        
         boton1 = new JButton(); // Creación de un botón
         boton1.setBounds(69, 65, 45, 10); // posicion x, posicion y, ancho, largo
         this.add(boton1); // añade el botón en la ventana
@@ -277,7 +279,6 @@ public class Ventana extends JComponent{
                 boton1.setEnabled(false); // desactiva el botón
                 boton1.setBackground(Color.GREEN); // color del botón
                 comprobarCuadros();}}); // llamada al metodo: comprobarCuadros()
-
  
         boton2 = new JButton();
         boton2.setBounds(130, 65, 45, 10);
@@ -532,23 +533,32 @@ public class Ventana extends JComponent{
      */
     public void comprobarCuadros(){
             if (boton1.isEnabled()==false & boton4.isEnabled()==false & boton5.isEnabled()==false & boton8.isEnabled()==false){
-                System.out.println("B1");}
+                drawB1 = true;
+                repaint();}
             if (boton2.isEnabled()==false & boton5.isEnabled()==false & boton6.isEnabled()==false & boton9.isEnabled()==false){
-                System.out.println("B2");}
+                drawB2 = true;
+                repaint();}
             if (boton3.isEnabled()==false & boton6.isEnabled()==false & boton7.isEnabled()==false & boton10.isEnabled()==false){
-                System.out.println("B3");}
+                drawB3 = true;
+                repaint();}
             if (boton8.isEnabled()==false & boton11.isEnabled()==false & boton12.isEnabled()==false & boton15.isEnabled()==false){
-                System.out.println("B4");}
+                drawB4 = true;
+                repaint();}
             if (boton9.isEnabled()==false & boton12.isEnabled()==false & boton13.isEnabled()==false & boton16.isEnabled()==false){
-                System.out.println("B5");}
+                drawB5 = true;
+                repaint();}
             if (boton10.isEnabled()==false & boton13.isEnabled()==false & boton14.isEnabled()==false & boton17.isEnabled()==false){
-                System.out.println("B6");}
+                drawB6 = true;
+                repaint();}
             if (boton15.isEnabled()==false & boton18.isEnabled()==false & boton19.isEnabled()==false & boton22.isEnabled()==false){
-                System.out.println("B7");}
+                drawB7 = true;
+                repaint();}
             if (boton16.isEnabled()==false & boton19.isEnabled()==false & boton20.isEnabled()==false & boton23.isEnabled()==false){
-                System.out.println("B8");}
+                drawB8 = true;
+                repaint();}
             if (boton17.isEnabled()==false & boton20.isEnabled()==false & boton21.isEnabled()==false & boton24.isEnabled()==false){
-                System.out.println("B9");} 
+                drawB9 = true;
+                repaint();} 
     }
     
     /**
@@ -557,6 +567,27 @@ public class Ventana extends JComponent{
      */
     public void paint(Graphics g){
         super.paint(g);
+        
+        // Relleno de los cuadros
+        g.setColor(Color.RED); // Color del relleno del cuadro 
+        if (drawB1) // Cuadro B1
+            g.fill3DRect(65, 75, 52, 52, true); // Posición y dimensiones de cuadro 
+        if (drawB2)
+            g.fill3DRect(127, 75, 52, 52, true);
+        if (drawB3)
+            g.fill3DRect(189, 75, 52, 52, true);
+        if (drawB4)
+            g.fill3DRect(65, 137, 52, 52, true);
+        if (drawB5)
+            g.fill3DRect(127, 137, 52, 52, true);
+        if (drawB6)
+            g.fill3DRect(189, 137, 52, 52, true);
+        if (drawB7)
+            g.fill3DRect(65, 199, 52, 52, true);
+        if (drawB8)
+            g.fill3DRect(127, 199, 52, 52, true);
+        if (drawB9)
+            g.fill3DRect(189, 199, 52, 52, true);
         Graphics2D g2d = (Graphics2D)g;
            
         // Dibujar la malla en la ventana
