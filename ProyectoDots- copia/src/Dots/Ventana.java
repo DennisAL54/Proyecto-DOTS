@@ -39,6 +39,8 @@ public class Ventana extends JComponent{
     public boolean drawB1, drawB2, drawB3, drawB4, drawB5, drawB6, drawB7, drawB8, drawB9 = false;
     
     public void ListaEnvio(){ // Controlador de entradas (Se encarga de comunicar al servidor sobre los movimientos realizados)
+        boolean JugadaH;
+        JugadaH = false;
         List<List> Datos;
         Datos = new ArrayList();
         List<Boolean> Turno;
@@ -93,137 +95,163 @@ public class Ventana extends JComponent{
         boton22yajugado = false;
         boton23yajugado = false;
         boton24yajugado = false;
-        if (boton1.isEnabled() == true & boton1yajugado == false){ //Condicionales a la espera de un movimiento
+        if (boton1.isEnabled() == false){ //Condicionales a la espera de un movimiento
             boton1yajugado = true;
             Jugada.add(1);
             Turno.add(true);
+            JugadaH = true;
             
         }
-        if (boton2.isEnabled() == true & boton2yajugado == false){
+        if (boton2.isEnabled() == false){
             boton2yajugado = true;
             Jugada.add(2);
             Turno.add(true);
+            JugadaH = true;
         }
-        if (boton3.isEnabled() == true & boton3yajugado == false){
+        if (boton3.isEnabled() == false){
             boton3yajugado = true;
             Jugada.add(3);
             Turno.add(true);
+            JugadaH = true;
         }
-        if (boton4.isEnabled() == true & boton4yajugado == false){
+        if (boton4.isEnabled() == false){
             boton4yajugado = true;
             Jugada.add(4);
             Turno.add(true);
         }
-        if (boton5.isEnabled() == true & boton5yajugado == false){
+        if (boton5.isEnabled() == false){
             boton5yajugado = true;
             Jugada.add(5);
             Turno.add(true);
+            JugadaH = true;
         }
-        if (boton6.isEnabled() == true & boton6yajugado == false){
+        if (boton6.isEnabled() == false){
             boton6yajugado = true;
             Jugada.add(6);
             Turno.add(true);
+            JugadaH = true;
         }
-        if (boton7.isEnabled() == true & boton7yajugado == false){
+        if (boton7.isEnabled() == false){
             boton7yajugado = true;
             Jugada.add(7);
             Turno.add(true);
+            JugadaH = true;
         }
-        if (boton8.isEnabled() == true & boton8yajugado == false){
+        if (boton8.isEnabled() == false){
             boton8yajugado = true;
             Jugada.add(8);
             Turno.add(true);
+            JugadaH = true;
         }
-        if (boton9.isEnabled() == true & boton9yajugado == false){
+        if (boton9.isEnabled() == false){
             boton9yajugado = true;
             Jugada.add(9);
             Turno.add(true);
+            JugadaH = true;
         }
-        if (boton10.isEnabled() == true & boton10yajugado == false){
+        if (boton10.isEnabled() == false){
             boton10yajugado = true;
             Jugada.add(10);
             Turno.add(true);
+            JugadaH = true;
         }
-        if (boton11.isEnabled() == true & boton11yajugado == false){
+        if (boton11.isEnabled() == false){
             boton11yajugado = true;
             Jugada.add(11);
             Turno.add(true);
+            JugadaH = true;
         }
-        if (boton12.isEnabled() == true & boton12yajugado == false){
+        if (boton12.isEnabled() == false){
             boton12yajugado = true;
             Jugada.add(12);
             Turno.add(true);
+            JugadaH = true;
         }
-        if (boton13.isEnabled() == true & boton13yajugado == false){
+        if (boton13.isEnabled() == false){
             boton13yajugado = true;
             Jugada.add(13);
             Turno.add(true);
+            JugadaH = true;
         }
-        if (boton14.isEnabled() == true & boton14yajugado == false){
+        if (boton14.isEnabled() == false){
             boton14yajugado = true;
             Jugada.add(14);
             Turno.add(true);
+            JugadaH = true;
         }
-        if (boton15.isEnabled() == true & boton15yajugado == false){
+        if (boton15.isEnabled() == false){
             boton15yajugado = true;
             Jugada.add(15);
             Turno.add(true);
+            JugadaH = true;
         }
-        if (boton16.isEnabled() == true & boton16yajugado == false){
+        if (boton16.isEnabled() == false){
             boton16yajugado = true;
             Jugada.add(16);
             Turno.add(true);
+            JugadaH = true;
         }
-        if (boton17.isEnabled() == true & boton17yajugado == false){
+        if (boton17.isEnabled() == false){
             boton17yajugado = true;
             Jugada.add(17);
             Turno.add(true);
+            JugadaH = true;
         }
-        if (boton18.isEnabled() == true & boton18yajugado == false){
+        if (boton18.isEnabled() == false){
             boton18yajugado = true;
             Jugada.add(18);
             Turno.add(true);
+            JugadaH = true;
         }
-        if (boton19.isEnabled() == true & boton19yajugado == false){
+        if (boton19.isEnabled() == false){
             boton19yajugado = true;
             Jugada.add(19);
             Turno.add(true);
+            JugadaH = true;
         }
-        if (boton20.isEnabled() == true & boton20yajugado == false){
+        if (boton20.isEnabled() == false){
             boton20yajugado = true;
             Jugada.add(20);
             Turno.add(true);
+            JugadaH = true;
         }
-        if (boton21.isEnabled() == true & boton21yajugado == false){
+        if (boton21.isEnabled() == false){
             boton21yajugado = true;
             Jugada.add(21);
             Turno.add(true);
+            JugadaH = true;
         }
-        if (boton22.isEnabled() == true & boton22yajugado == false){
+        if (boton22.isEnabled() == false){
             boton22yajugado = true;
             Jugada.add(22);
             Turno.add(true);
+            JugadaH = true;
         }
-        if (boton23.isEnabled() == true & boton23yajugado == false){
+        if (boton23.isEnabled() == false){
             boton23yajugado = true;
             Jugada.add(23);
             Turno.add(true);
+            JugadaH = true;
         }
-        if (boton24.isEnabled() == true & boton24yajugado == false){
+        if (boton24.isEnabled() == false){
             boton24yajugado = true;
             Jugada.add(24);
             Turno.add(true);
+            JugadaH = true;
         }
+        if(JugadaH == true){
         Datos.add(Jugada); // Se Añaden ambas variables de tipo lista a una lista mayor.
         Datos.add(Turno);
         try {
             Socket Cliente = new Socket("localhost", 4500); // Declaracion del socket cliente
             ObjectOutputStream mensaje = new ObjectOutputStream(Cliente.getOutputStream());// Envio de mensaje
-            mensaje.writeObject("jsonData");
-            Cliente.close();
-            /*Gson gsonBot = new Gson(); // declaracion de variable Conversora a json
+            Gson gsonBot = new Gson(); // declaracion de variable Conversora a json
             String jsonData = gsonBot.toJson(Datos);// Conversion a Json
-            System.out.println(jsonData);*/
+            mensaje.writeObject(jsonData);
+            Cliente.close();
+            
+            System.out.println(jsonData);
+            JugadaH = false;
             //mensaje.writeObject("jsonData"); // Envio del mensaje en formato json
             
             
@@ -233,10 +261,6 @@ public class Ventana extends JComponent{
     
     
     }
-    /**
-     *
-     */
-    public void Socket(){ // Creacion de Socket
         
     }
     /**

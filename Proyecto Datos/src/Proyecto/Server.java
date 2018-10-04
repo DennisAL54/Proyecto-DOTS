@@ -43,7 +43,7 @@ public class Server { // Class para el server
     /**
      *
      */
-    public void mainSerializador(){ // Serializador principal
+    /*public void mainSerializador(){ // Serializador principal
         List<List> Botones; // Variable de tipo lista
         List<Integer> Fila1;//Variables para las filas
         List<Integer> Fila2;
@@ -72,26 +72,34 @@ public class Server { // Class para el server
      *
      */
     public void Socket(){ // Metodo del socket
+        List<Integer> JugadasR;
+        JugadasR = new ArrayList();
         try {
             ServerSocket servidor = new ServerSocket(4500);// Declaracion de nuevo Socket server
             Socket NuevoCliente = servidor.accept();// Declaracion de un cliente
             ObjectInputStream entrada = new ObjectInputStream(NuevoCliente.getInputStream());
             String mensaje = (String)entrada.readObject();
             System.out.println(mensaje);
+            //Gson gsonI = new Gson();
+           // dataentrante = mensaje;
+            //gsonI.fromJson(dataentrante, Server.class);
+            //JugadasR = JugadasR += mensaje[0];
+            
             NuevoCliente.close();
             servidor.close();
-        } catch (ClassNotFoundException | IOException ex){
+            
+        } catch (IOException | ClassNotFoundException ex){
             Logger.getLogger(Server.class.getName()).log(Level.SEVERE,null,ex);
         }
+        
     }
 
     /**
      *
      */
-    public void mainDeseralizador(){ //Deserializador de Json
+    /*public void mainDeseralizador(){ //Deserializador de Json
         dataentrante = "{'boton1': 'Alpha'}";
         Gson gsonI = new Gson();
         
-        gsonI.fromJson(dataentrante, Server.class);
-    }
+        gsonI.fromJson(dataentrante, Server.class);*/
 }
