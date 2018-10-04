@@ -218,11 +218,12 @@ public class Ventana extends JComponent{
         try {
             Socket Cliente = new Socket("localhost", 4500); // Declaracion del socket cliente
             ObjectOutputStream mensaje = new ObjectOutputStream(Cliente.getOutputStream());// Envio de mensaje
+            mensaje.writeObject("jsonData");
             Cliente.close();
-            Gson gsonBot = new Gson(); // declaracion de variable Conversora a json
+            /*Gson gsonBot = new Gson(); // declaracion de variable Conversora a json
             String jsonData = gsonBot.toJson(Datos);// Conversion a Json
-            System.out.println(jsonData);
-            mensaje.writeBytes(jsonData); // Envio del mensaje en formato json
+            System.out.println(jsonData);*/
+            //mensaje.writeObject("jsonData"); // Envio del mensaje en formato json
             
             
         } catch (IOException ex) {// Excepcion (Parecido al del server)
