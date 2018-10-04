@@ -240,9 +240,7 @@ public class Ventana extends JComponent{
         setDoubleBuffered(true);
         setBackground(Color.white);
         setFocusable(true);
-
         
-    
         // malla de puntos 
         PuntoColum = 4; // Cantidad de columnas de la malla
         PuntoFila = 4; // Cantidad de filas de la malla
@@ -259,7 +257,6 @@ public class Ventana extends JComponent{
                 puntos[i][j].setY(Punto_inicioY + j*puntos[i][j].getImage().getHeight(null) + j*Punto_Relleno);
             }
              
-        
         boton1 = new JButton(); // Creación de un botón
         boton1.setBounds(69, 65, 45, 10); // posicion x, posicion y, ancho, largo
         this.add(boton1); // añade el botón en la ventana
@@ -270,7 +267,6 @@ public class Ventana extends JComponent{
                 boton1.setEnabled(false); // desactiva el botón
                 boton1.setBackground(Color.GREEN); // color del botón
                 comprobarCuadros();}}); // llamada al metodo: comprobarCuadros()
-
  
         boton2 = new JButton();
         boton2.setBounds(130, 65, 45, 10);
@@ -540,7 +536,6 @@ public class Ventana extends JComponent{
                 drawB5 = true;
                 repaint();}
             if (boton10.isEnabled()==false & boton13.isEnabled()==false & boton14.isEnabled()==false & boton17.isEnabled()==false){
-                
                 drawB6 = true;
                 repaint();}
             if (boton15.isEnabled()==false & boton18.isEnabled()==false & boton19.isEnabled()==false & boton22.isEnabled()==false){
