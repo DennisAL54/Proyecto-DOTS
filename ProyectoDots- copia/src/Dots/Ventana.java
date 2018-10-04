@@ -37,6 +37,7 @@ public class Ventana extends JComponent{
     private JButton boton1,boton2,boton3,boton4,boton5,boton6,boton7,boton8,boton9,boton10,boton11,boton12,boton13,
              boton14,boton15,boton16,boton17,boton18,boton19,boton20,boton21,boton22,boton23,boton24;
     public boolean drawB1, drawB2, drawB3, drawB4, drawB5, drawB6, drawB7, drawB8, drawB9 = false;
+    public boolean finJuego = false;
     
     public void ListaEnvio(){ // Controlador de entradas (Se encarga de comunicar al servidor sobre los movimientos realizados)
         List<List> Datos;
@@ -528,6 +529,11 @@ public class Ventana extends JComponent{
      * Método que compraba si se cierra un cuadrado
      */
     public void comprobarCuadros(){
+        // Comprueba si todos los espacios han sido utilizados
+        if(drawB1==true & drawB2==true & drawB3==true & drawB4==true & drawB5==true & drawB6==true & drawB7==true & drawB8==true & drawB9==true){
+            finJuego = true; // Cambia el valor a finJuego
+            repaint();
+        }else{// Comprueba si se cierra un cuadrado
             if (boton1.isEnabled()==false & boton4.isEnabled()==false & boton5.isEnabled()==false & boton8.isEnabled()==false){
                 drawB1 = true;
                 repaint();}
@@ -554,7 +560,8 @@ public class Ventana extends JComponent{
                 repaint();}
             if (boton17.isEnabled()==false & boton20.isEnabled()==false & boton21.isEnabled()==false & boton24.isEnabled()==false){
                 drawB9 = true;
-                repaint();} 
+                repaint();}
+        }    
     }
     
     /**
@@ -565,7 +572,8 @@ public class Ventana extends JComponent{
         super.paint(g);
         
         // Relleno de los cuadros
-        g.setColor(Color.RED); // Color del relleno del cuadro 
+        g.setColor(Color.RED); // Color del relleno del cuadro
+        g.setFont(new Font( "Tahoma", Font.BOLD, 25 ));
         if (drawB1) // Cuadro B1
             g.fill3DRect(65, 75, 52, 52, true); // Posición y dimensiones de cuadro 
         if (drawB2)
@@ -584,6 +592,10 @@ public class Ventana extends JComponent{
             g.fill3DRect(127, 199, 52, 52, true);
         if (drawB9)
             g.fill3DRect(189, 199, 52, 52, true);
+        
+        if(finJuego) // Indica el final del juego 
+            g.drawString("Fin del Juego", 70, 320); // Mensaje y posición del texto
+        comprobarCuadros(); // Vuelve a comprobar los cuadrados 
         Graphics2D g2d = (Graphics2D)g;
            
         // Dibujar la malla en la ventana
