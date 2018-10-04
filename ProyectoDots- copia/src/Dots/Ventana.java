@@ -36,11 +36,7 @@ public class Ventana extends JComponent{
     // Botones que hacen el papel de conectores entre líneas
     private JButton boton1,boton2,boton3,boton4,boton5,boton6,boton7,boton8,boton9,boton10,boton11,boton12,boton13,
              boton14,boton15,boton16,boton17,boton18,boton19,boton20,boton21,boton22,boton23,boton24;
-<<<<<<< HEAD
-=======
-    private List Datos;
     public boolean drawB1, drawB2, drawB3, drawB4, drawB5, drawB6, drawB7, drawB8, drawB9 = false;
->>>>>>> master
     
     public void ListaEnvio(){ // Controlador de entradas (Se encarga de comunicar al servidor sobre los movimientos realizados)
         List<List> Datos;
