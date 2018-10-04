@@ -17,8 +17,9 @@ public class Main {
      */
     public static void main(String [] args){
         Server su = new Server();
-        su.mainSerializador();
-        su.mainDeseralizador();
+        //su.mainSerializador();
+        //su.mainDeseralizador();
+        su.Socket();
 
     }
 }

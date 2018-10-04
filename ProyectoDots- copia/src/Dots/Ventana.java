@@ -36,9 +36,10 @@ public class Ventana extends JComponent{
     // Botones que hacen el papel de conectores entre líneas
     private JButton boton1,boton2,boton3,boton4,boton5,boton6,boton7,boton8,boton9,boton10,boton11,boton12,boton13,
              boton14,boton15,boton16,boton17,boton18,boton19,boton20,boton21,boton22,boton23,boton24;
-    private List Datos;
     
     public void ListaEnvio(){ // Controlador de entradas (Se encarga de comunicar al servidor sobre los movimientos realizados)
+        List<List> Datos;
+        Datos = new ArrayList();
         List<Boolean> Turno;
         Turno = new ArrayList(); //Variable que almacena el dato turno turno
         List<Integer> Jugada;
@@ -212,23 +213,29 @@ public class Ventana extends JComponent{
             Jugada.add(24);
             Turno.add(true);
         }
-    Datos.add(Jugada); // Se Añaden ambas variables de tipo lista a una lista mayor.
-    Datos.add(Turno);
+        Datos.add(Jugada); // Se Añaden ambas variables de tipo lista a una lista mayor.
+        Datos.add(Turno);
+        try {
+            Socket Cliente = new Socket("localhost", 4500); // Declaracion del socket cliente
+            ObjectOutputStream mensaje = new ObjectOutputStream(Cliente.getOutputStream());// Envio de mensaje
+            Cliente.close();
+            Gson gsonBot = new Gson(); // declaracion de variable Conversora a json
+            String jsonData = gsonBot.toJson(Datos);// Conversion a Json
+            System.out.println(jsonData);
+            mensaje.writeBytes(jsonData); // Envio del mensaje en formato json
+            
+            
+        } catch (IOException ex) {// Excepcion (Parecido al del server)
+            Logger.getLogger(Ventana.class.getName()).log(Level.SEVERE, null, ex);
+        }
+    
+    
     }
     /**
      *
      */
     public void Socket(){ // Creacion de Socket
-        try {
-            Socket Cliente = new Socket("localhost", 4500); // Declaracion del socket cliente
-            ObjectOutputStream mensaje = new ObjectOutputStream(Cliente.getOutputStream());// Envio de mensaje
-            Gson gsonBot = new Gson(); // declaracion de variable Conversora a json
-            String jsonData = gsonBot.toJson(Datos);// Conversion a Json
-            mensaje.writeBytes(jsonData); // Envio del mensaje en formato json
-            
-        } catch (IOException ex) {// Excepcion (Parecido al del server)
-            Logger.getLogger(Ventana.class.getName()).log(Level.SEVERE, null, ex);
-        }
+        
     }
     /**
      * Constructor de las clase ventana donde se crea la malla

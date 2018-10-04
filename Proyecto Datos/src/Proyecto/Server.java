@@ -78,6 +78,8 @@ public class Server { // Class para el server
             ObjectInputStream entrada = new ObjectInputStream(NuevoCliente.getInputStream());
             try {
                 String mensaje = (String)entrada.readObject();
+                System.out.println(mensaje);
+                NuevoCliente.close();
             } catch (ClassNotFoundException ex) {
                 Logger.getLogger(Server.class.getName()).log(Level.SEVERE, null, ex);
             }

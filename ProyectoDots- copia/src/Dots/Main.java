@@ -29,5 +29,9 @@ public class Main extends JFrame {
      * @param args
      */
     public static void main(String[] args) {
-        new Main();}
+        new Main();
+        Ventana v = new Ventana();
+        v.ListaEnvio();
+    }
+    
 }
